@@ -1,0 +1,60 @@
+.aca-list {
+    padding: 10px; 
+    margin:0px;
+
+    font-style: italic;
+    list-style: none;
+}
+ 
+.aca-list li{
+    display: inline;
+    padding-left:13px;
+}
+#aca-name{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 49px;
+}
+
+#aca-header-container{
+    margin-top:30px;
+    width:700px;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+#aca-header{
+    text-align: center;
+    border:2px solid black;
+    width:650px;
+    height:100px;
+    margin-left:auto;
+    margin-right:auto;
+    padding-top:20px;
+}
+
+.aca-list li a{
+    text-decoration: none;
+    color:gray;
+    font-size: 14px;
+}
+
+
+#aca-cr{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 10px;
+    font-style: italic;
+}
+
+
+#aca-main-container{
+    width:700px;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+#aca-footer{
+    width:700px;
+    margin-left:auto;
+    margin-right:auto;
+}
+
