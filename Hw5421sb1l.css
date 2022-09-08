@@ -20,7 +20,7 @@
     width:750px;
     margin-left:auto;
     margin-right:auto;
-    margin-bottom:100px;
+    margin-bottom:90px;
 }
 
 #aca-header{
@@ -32,6 +32,9 @@
     margin-right:auto;
     padding-top:20px;
 }
+#aca-header ul{
+    padding-right:24px;
+}
 
 .aca-list li a{
     text-decoration: none;
@@ -42,7 +45,7 @@
 
 #aca-cr{
     font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 10px;
+    font-size: 8px;
     font-style: italic;
 }
 
@@ -54,6 +57,7 @@
 }
 
 #aca-footer{
+    margin-top:20px;
     text-align: center;
     width:700px;
     margin-left:auto;
@@ -76,3 +80,7 @@
     width:15px;
     height:15px;
 }
+
+/* .aca-list li{
+padding-right:7px;
+} */
