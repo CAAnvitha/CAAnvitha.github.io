@@ -4,6 +4,7 @@ var tableData=[];
 function resetForm() {
     document.getElementById("aca-form-submit").reset();
     document.getElementById("aca-table-records").innerHTML = "";
+    document.getElementById('aca-location').removeAttribute('disabled');
     document.getElementById("aca-business-details-card").innerHTML = "";
     document.getElementById("aca-distance").value = "10";
     document.getElementById("aca-no-records-message").style.visibility = "hidden";
