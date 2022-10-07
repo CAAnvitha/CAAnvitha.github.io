@@ -112,6 +112,7 @@ table {
 }
 #aca-button-clear:hover {
     background-color: rgba(220, 156, 36, 0.954);
+    cursor:default;
 }
 
 #aca-button-submit {
@@ -123,6 +124,7 @@ table {
 
 #aca-button-submit:hover{
     background-color: #647ebae8;
+    cursor:default;
 }
 
 #aca-business-details-card {

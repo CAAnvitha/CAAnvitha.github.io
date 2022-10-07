@@ -4,7 +4,7 @@ var tableData=[];
 function resetForm() {
     document.getElementById("aca-form-submit").reset();
     document.getElementById("aca-table-records").innerHTML = "";
-    document.getElementById('aca-location').removeAttribute('disabled');
+    document.getElementById('aca-location').disabled=false;
     document.getElementById("aca-business-details-card").innerHTML = "";
     document.getElementById("aca-distance").value = "10";
     document.getElementById("aca-no-records-message").style.visibility = "hidden";
@@ -17,14 +17,6 @@ $("#aca-checkbox").click(function () {
  });
 
 $("#aca-form-submit").submit(function(e){
-    // $.ajax({
-    //     type: 'GET',
-    //     url: "/hello",
-    //     success: function(data){
-    //                alert(data);
-    //              }
-    // });
-
     var form = $(this);
     var actionUrl = form.attr('action');
 
@@ -173,154 +165,6 @@ function constructBusinessesTable(data) {
         document.getElementById("aca-no-records-message").style.visibility = "visible";
     }
 }
-
-
-function sortByName () {
-    console.log("SortBy is calling");
-    var table, rows, switching, i, x, y, shouldSwitch;
-    table = document.getElementById("aca-table");
-    switching = true;
-    
-    var sortDirection = sortDirections['name'];
-    while (switching) {
-      // Start by saying: no switching is done:
-      switching = false;
-      rows = table.rows;
-      /* Loop through all table rows (except the
-      first, which contains table headers): */
-      for (i = 1; i < (rows.length - 1); i++) {
-        // Start by saying there should be no switching:
-        shouldSwitch = false;
-        /* Get the two elements you want to compare,
-        one from current row and one from the next: */
-        x = rows[i].getElementsByTagName("TD")[2];
-        y = rows[i + 1].getElementsByTagName("TD")[2];
-        // Check if the two rows should switch place:
-        if (sortDirection === 0) {
-            if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
-                // If so, mark as a switch and break the loop:
-                shouldSwitch = true;
-                break;
-            }
-        } else {
-            if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
-                // If so, mark as a switch and break the loop:
-                shouldSwitch = true;
-                break;
-            }
-        }
-      }
-      if (shouldSwitch) {
-        /* If a switch has been marked, make the switch
-        and mark that a switch has been done: */
-        rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
-        switching = true;
-      }
-    }
-    if (sortDirections['name'] === 0) {
-        sortDirections['name'] = 1
-    } else {
-        sortDirections['name'] = 0
-    }
-    
-}
-
-function sortByRating () {
-    var table, rows, switching, i, x, y, shouldSwitch;
-    table = document.getElementById("aca-table");
-    switching = true;
-    
-    var sortDirection = sortDirections['rating'];
-    while (switching) {
-      // Start by saying: no switching is done:
-      switching = false;
-      rows = table.rows;
-      /* Loop through all table rows (except the
-      first, which contains table headers): */
-      for (i = 1; i < (rows.length - 1); i++) {
-        // Start by saying there should be no switching:
-        shouldSwitch = false;
-        /* Get the two elements you want to compare,
-        one from current row and one from the next: */
-        x = rows[i].getElementsByTagName("TD")[3];
-        y = rows[i + 1].getElementsByTagName("TD")[3];
-        // Check if the two rows should switch place:
-        if (sortDirection === 0) {
-            if (x.innerHTML > y.innerHTML) {
-                // If so, mark as a switch and break the loop:
-                shouldSwitch = true;
-                break;
-            }
-        } else {
-            if (x.innerHTML < y.innerHTML) {
-                // If so, mark as a switch and break the loop:
-                shouldSwitch = true;
-                break;
-            }
-        }
-      }
-      if (shouldSwitch) {
-        /* If a switch has been marked, make the switch
-        and mark that a switch has been done: */
-        rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
-        switching = true;
-      }
-    }
-    if (sortDirections['rating'] === 0) {
-        sortDirections['rating'] = 1
-    } else {
-        sortDirections['rating'] = 0
-    }
-}
-
-function sortByDistance () {
-    var table, rows, switching, i, x, y, shouldSwitch;
-    table = document.getElementById("aca-table");
-    switching = true;
-    
-    var sortDirection = sortDirections['distance'];
-    while (switching) {
-      // Start by saying: no switching is done:
-      switching = false;
-      rows = table.rows;
-      /* Loop through all table rows (except the
-      first, which contains table headers): */
-      for (i = 1; i < (rows.length - 1); i++) {
-        // Start by saying there should be no switching:
-        shouldSwitch = false;
-        /* Get the two elements you want to compare,
-        one from current row and one from the next: */
-        x = rows[i].getElementsByTagName("TD")[4];
-        y = rows[i + 1].getElementsByTagName("TD")[4];
-        // Check if the two rows should switch place:
-        if (sortDirection === 0) {
-            if (x.innerHTML > y.innerHTML) {
-                // If so, mark as a switch and break the loop:
-                shouldSwitch = true;
-                break;
-            }
-        } else {
-            if (x.innerHTML < y.innerHTML) {
-                // If so, mark as a switch and break the loop:
-                shouldSwitch = true;
-                break;
-            }
-        }
-      }
-      if (shouldSwitch) {
-        /* If a switch has been marked, make the switch
-        and mark that a switch has been done: */
-        rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
-        switching = true;
-      }
-    }
-    if (sortDirections['distance'] === 0) {
-        sortDirections['distance'] = 1
-    } else {
-        sortDirections['distance'] = 0
-    }
-}
-
 
 function addDataToTable (table, data) {
     console.log("inside add to table",table,data);

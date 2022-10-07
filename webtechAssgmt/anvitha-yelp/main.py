@@ -53,7 +53,10 @@ def getBusinessDetail(id):
         if 'name' in keys:
             business['name'] = res['name']
         if 'is_closed' in keys:
-            business['status'] = 'Closed' if res['is_closed'] else 'Open now'
+             if 'hours' in keys:
+                hours = res['hours']
+                business['status'] = 'Open now' if hours[0]["is_open_now"] else 'Closed'
+                # business['status'] = 'Closed' if res['is_closed'] else 'Open now'
         if 'display_phone' in keys:
             business['phone'] = res['display_phone']
         if 'price' in keys:
